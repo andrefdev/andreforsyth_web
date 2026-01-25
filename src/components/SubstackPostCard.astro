@@ -1,0 +1,41 @@
+---
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
+import { formatDate } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
+import Link from './Link.astro'
+import type { SubstackPost } from '@/lib/substack'
+
+interface Props {
+  post: SubstackPost
+}
+
+const { post } = Astro.props
+const formattedDate = formatDate(new Date(post.pubDate))
+---
+
+<div
+  class="hover:bg-muted/50 rounded-xl border p-4 transition-colors duration-300 ease-in-out"
+>
+  <Link
+    href={post.link}
+    class="flex flex-col gap-4 sm:flex-row"
+    external
+  >
+    <div class="grow">
+      <h3 class="mb-1 text-lg font-medium">{post.title}</h3>
+      <p class="text-muted-foreground mb-2 text-sm line-clamp-2">{post.contentSnippet}</p>
+
+      <div
+        class="text-muted-foreground mb-2 flex flex-wrap items-center gap-x-2 text-xs"
+      >
+        <span class="flex items-center gap-1">
+            <Icon name="lucide:aperture" class="size-3" />
+            Substack
+        </span>
+        <Separator orientation="vertical" className="h-4!" />
+        <span>{formattedDate}</span>
+      </div>
+    </div>
+  </Link>
+</div>

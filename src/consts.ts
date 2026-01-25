@@ -2,10 +2,10 @@ import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
   title: 'andreforsyth',
-  description: 'Personal website of Andre Forsyth.',
+  description: 'Sitio personal de Andre Forsyth.',
   href: 'https://andreforsyth.com',
   author: 'Andre Forsyth',
-  locale: 'en-US',
+  locale: 'es-ES',
   featuredPostCount: 2,
   postsPerPage: 3,
 }
@@ -13,15 +13,11 @@ export const SITE: Site = {
 export const NAV_LINKS: SocialLink[] = [
   {
     href: '/blog',
-    label: 'blog',
-  },
-  {
-    href: '/authors',
-    label: 'authors',
+    label: 'Blog',
   },
   {
     href: '/about',
-    label: 'about',
+    label: 'Sobre mí',
   },
 ]
 

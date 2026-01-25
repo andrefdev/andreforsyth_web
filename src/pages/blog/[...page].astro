@@ -6,6 +6,8 @@ import PaginationComponent from '@/components/ui/pagination'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getAllPosts, groupPostsByYear } from '@/lib/data-utils'
+import { getSubstackPosts } from '@/lib/substack'
+import SubstackPostCard from '@/components/SubstackPostCard.astro'
 import type { PaginateFunction } from 'astro'
 
 export async function getStaticPaths({
@@ -21,6 +23,7 @@ const { page } = Astro.props
 
 const postsByYear = groupPostsByYear(page.data)
 const years = Object.keys(postsByYear).sort((a, b) => parseInt(b) - parseInt(a))
+const substackPosts = page.currentPage === 1 ? await getSubstackPosts() : []
 ---
 
 <Layout class="max-w-3xl">
@@ -28,11 +31,25 @@ const years = Object.keys(postsByYear).sort((a, b) => parseInt(b) - parseInt(a))
   <Breadcrumbs
     items={[
       { label: 'Blog', href: '/blog', icon: 'lucide:library-big' },
-      { label: `Page ${page.currentPage}`, icon: 'lucide:book-copy' },
+      { label: `Página ${page.currentPage}`, icon: 'lucide:book-copy' },
     ]}
   />
 
   <div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-8">
+    {
+      substackPosts.length > 0 && (
+        <section class="flex flex-col gap-y-4">
+          <div class="font-medium">Newsletter</div>
+          <ul class="flex flex-col gap-4">
+            {substackPosts.map((post) => (
+              <li>
+                <SubstackPostCard post={post} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
     {
       years.map((year) => (
         <section class="flex flex-col gap-y-4">
