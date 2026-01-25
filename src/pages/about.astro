@@ -1,6 +1,5 @@
 ---
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
-import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 import Layout from '@/layouts/Layout.astro'
@@ -15,32 +14,65 @@ const projects = await getAllProjects()
 
   <section>
     <div class="min-w-full">
-      <div class="prose mb-8">
-        <p class="mt-0">
-          astro-erudite is an opinionated, unstyled static blogging template
-          that prioritizes simplicity and performance, built with <Link
-            href="https://astro.build"
-            external
-            underline>Astro</Link
-          >, <Link href="https://tailwindcss.com" external underline
-            >Tailwind</Link
-          >, and <Link href="https://ui.shadcn.com" external underline
-            >shadcn/ui</Link
-          >. It provides a clean foundation for your content while being
-          extremely easy to customize.
+      <div class="prose mb-12">
+        <p class="font-serif text-xl leading-relaxed italic opacity-90">
+          "No persigo la perfección, persigo <span
+            class="text-foreground font-semibold">sistemas que funcionen</span
+          >."
         </p>
-        <p>
-          To learn more about the philosophy behind this template, check out the
-          following blog post: <Link
-            href="/blog/the-state-of-static-blogs"
-            underline>The State of Static Blogs in 2024</Link
-          >.
+        <p class="mt-6 text-lg leading-relaxed">
+          Construyo empresas, productos y metodologías que ayudan a las personas
+          a vivir con más claridad y menos fricción.
         </p>
       </div>
 
-      <h2 class="mb-4 text-2xl font-medium">Example Projects Listing</h2>
-      <div class="flex flex-col gap-4">
-        {projects.map((project) => <ProjectCard project={project} />)}
+      <h2 class="mb-8 text-2xl font-medium">Filosofía</h2>
+      <div class="grid gap-6 sm:grid-cols-1">
+        <div class="border-primary/20 border-l-2 pl-4">
+          <h3 class="text-foreground text-lg font-medium">
+            Excelencia Consciente
+          </h3>
+          <p class="text-muted-foreground mt-1">
+            Hacer las cosas bien por identidad, no por obligación.
+          </p>
+        </div>
+        <div class="border-primary/20 border-l-2 pl-4">
+          <h3 class="text-foreground text-lg font-medium">
+            Disciplina como Libertad
+          </h3>
+          <p class="text-muted-foreground mt-1">
+            El orden crea espacio para la creatividad.
+          </p>
+        </div>
+        <div class="border-primary/20 border-l-2 pl-4">
+          <h3 class="text-foreground text-lg font-medium">
+            Tecnología con Propósito
+          </h3>
+          <p class="text-muted-foreground mt-1">
+            Herramientas que sirven al humano.
+          </p>
+        </div>
+        <div class="border-primary/20 border-l-2 pl-4">
+          <h3 class="text-foreground text-lg font-medium">
+            Crecimiento Integral
+          </h3>
+          <p class="text-muted-foreground mt-1">
+            El éxito financiero sin salud mental es un fracaso.
+          </p>
+        </div>
+        <div class="border-primary/20 border-l-2 pl-4">
+          <h3 class="text-foreground text-lg font-medium">Impacto Real</h3>
+          <p class="text-muted-foreground mt-1">
+            Resultados medibles que transforman vidas.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="mb-6 text-2xl font-medium">Projects</h2>
+        <div class="flex flex-col gap-6">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
       </div>
     </div>
   </section>
