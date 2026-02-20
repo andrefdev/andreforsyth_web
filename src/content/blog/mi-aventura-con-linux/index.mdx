@@ -6,34 +6,102 @@ tags: ['linux', 'personal']
 authors: ['andre']
 ---
 
-## El inicio de una nueva era
+## Contexto
 
-Después de años usando sistemas operativos convencionales, decidí dar el salto a Linux. Esta serie documenta mi experiencia, los desafíos encontrados, las soluciones descubiertas y todo lo que he aprendido en el camino.
+He cambiado de sistema operativo más de 100 veces a lo largo de mi vida desde los 13 años y he vivido la evolución de este hermoso ecosistema, pasé de Ubuntu, Linux Mint, Kubuntu, Lubuntu y todas las variantes de Ubuntu, Fedora, Arch, etc.
 
-### ¿Por qué Linux?
+Linux es algo que todos usamos día tras día incluso sin darnos cuenta, que ha creado un ecosistema de desarrollo de software increíble que nos demuestra como cuando se desarrolla software por verdadero amor al desarrollo salen cosas increíbles.
 
-Las razones para hacer el cambio fueron múltiples:
+Voy a explicarte que es Linux, que tipos de sistema operativos hay, por qué debes cambiar a Linux y como hacerlo ahora mismo.
 
-1. **Libertad y control** — La posibilidad de personalizar absolutamente todo en mi sistema
-2. **Privacidad** — Un sistema que respeta mis datos y no los monetiza
-3. **Rendimiento** — Aprovechamiento óptimo de los recursos del hardware
-4. **Aprendizaje** — Entender realmente cómo funciona un sistema operativo
-5. **Comunidad** — Formar parte de una comunidad apasionada por el software libre
+> **¡Suscríbete si te interesa la tecnología y negocios!**
 
-### Lo que encontrarás en esta serie
+## ¿Que es Linux?
 
-A través de los subposts podrás explorar diferentes aspectos de mi experiencia:
+Linux es un kernel creado por este sujeto, desde su habitación hace muchos años.
 
-- **Primeros pasos** — La instalación y configuración inicial
-- **Personalización** — Cómo hice mi sistema realmente mío
-- **Herramientas de desarrollo** — Setup para programación
-- **Problemas y soluciones** — Los obstáculos encontrados y cómo los superé
-- **Reflexiones** — Pensamientos sobre el ecosistema Linux
+**Linus Torvalds: NVIDIA ¡Fuck You!**
 
-## ¿Para quién es esta serie?
+Linus Torvalds, creó Linux porque él necesitaba un sistema operativo y creía que Microsoft solo buscaba lucrar y no crear valor para las personas, cosa que de hecho se mantiene a día de hoy.
 
-Si estás considerando hacer el cambio a Linux, o simplemente tienes curiosidad sobre cómo es la experiencia de un usuario que viene de otros sistemas operativos, esta serie es para ti. No pretendo ser un experto — soy un usuario más compartiendo mi viaje de aprendizaje.
+Entonces, si Linux no es un sistema operativo sino un kernel, **¿Que es un Kernel?**
 
-## Explora los artículos
+Un kernel es una pieza de software encargada de comunicar el "hardware" con el "sistema operativo", aquí va la explicación mas técnica:
 
-En el sidebar de escritorio o en el header en móvil encontrarás los diferentes artículos que componen esta serie. Siéntete libre de explorarlos en el orden que prefieras.
+> El kernel de Linux es el núcleo del sistema operativo. Es el componente central que se encarga de comunicar el software con el hardware y de administrar todos los recursos de la computadora: procesador, memoria, discos, red y dispositivos periféricos. Todo lo que ocurre en un sistema Linux pasa, directa o indirectamente, por el kernel.
+
+Su función principal es actuar como un intermediario entre las aplicaciones y el hardware. Cuando un programa necesita leer un archivo, usar la red, acceder a la memoria o ejecutar instrucciones en la CPU, no lo hace directamente: realiza una llamada al sistema (*system call*), que es atendida por el kernel. El kernel valida la solicitud, gestiona los permisos, asigna recursos y ejecuta la operación de forma segura.
+
+El kernel de Linux es monolítico, pero modular. Esto significa que la mayor parte de sus funciones viven dentro de un solo núcleo, pero pueden cargarse o descargarse módulos dinámicamente (drivers, sistemas de archivos, soporte de red, etc.) sin necesidad de reiniciar el sistema. Esto le da flexibilidad, rendimiento y capacidad de adaptación a distintos tipos de hardware y entornos.
+
+Internamente, el kernel se divide en varios subsistemas clave: el planificador (*scheduler*), que decide qué procesos usan la CPU y por cuánto tiempo; el gestor de memoria, que asigna y libera RAM y maneja memoria virtual; el sistema de archivos, que organiza cómo se almacenan y acceden los datos; y la pila de red, que gestiona las comunicaciones. Todos estos componentes trabajan en conjunto para que el sistema sea estable, eficiente y seguro.
+
+En la práctica, Linux no es solo el kernel, sino el ecosistema que se construye alrededor de él: herramientas, librerías y entornos gráficos. Sin embargo, el kernel es la base sobre la cual todo funciona. Su diseño abierto, su constante evolución y su capacidad para escalar desde dispositivos pequeños hasta grandes centros de datos es lo que ha convertido a Linux en el sistema operativo más usado del mundo en servidores, infraestructura y sistemas embebidos.
+
+## ¿Dónde se usa Linux?
+
+Si tienes un teléfono Android ya estás usando Linux sin siquiera saberlo, está en la base, es lo que comunica la RAM, CPU y demás con el sistema operativo Android, que de hecho, es lo que hace que Google no pueda lucrar con Android ya que tienen que seguir la licencia de código abierto de Linux.
+
+Si en algún momento has usado algún servicio en la nube, red social o software SaaS, también has usado Linux.
+
+**Linux o Windows Server OS: ¿Cuál es mejor? | InMotion Hosting**
+
+Linux siempre ha sido mas usado que cualquier otro en servidores, está en todas partes y hace algunos años aún no era tan "famoso" para desktop, para el usuario convencional.
+
+Pero las cosas han cambiado con los años y para mejor. La mayor brecha que teníamos era la compatibilidad con el software que usamos en el día a día, y eso ha mejorado por varios factores:
+
+- Cada vez mas software que usamos es *Cloud Based* (no requieren instalar nada)
+- Steam impulsa la compatibilidad de sus juegos con Linux para sus Steam Deck
+- Los drivers de Nvidia (las nuevas gráficas) ya no dan problema (esto NUNCA pasó con AMD, fuck nvidia)
+- Instalar una distribución es mucho mas sencillo que antes
+
+Hace 5 años recuerdo que instalabas una distribución y de las primeras cosas que hacías era descargar Wine porque te dabas cuenta de que los juegos o aplicaciones que usabas no eran compatibles con el SO.
+
+**Cómo instalar Wine 2 en Ubuntu**
+
+¿Alguien se acuerda de esto?
+Aún así no funcionaba el 100% de las veces.
+
+## Cómo empezar a usar Linux
+
+1. Elige una distro de tu preferencia (hay cientos)
+2. Descarga Rufus si estás en Windows o Balena Etcher si estás en macOS
+3. Consigue un USB con mínimo 8GB de espacio y formatéalo
+4. Conéctalo a la computadora y selecciónalo en el software
+5. Pon la ISO y procede con los pasos para el flasheo de la misma
+6. Reinicia la computadora y arranca desde el USB
+7. Sigue los pasos del instalador
+
+Todo este proceso evidentemente tiene mas pasos pero lo puse lo más macro posible. Dependiendo de las características de tu instalación tendrás que hacer mas o menos cosas, por ejemplo un backup o si quieres mantener Windows pues una unidad fragmentada para el dual boot y asegurarte de no cargarte el GRUB.
+
+Pero vamos a ponernos en el caso de que no sabemos NADA y simplemente quieres arrancar de 0 sin importar backups, *dual boot* ni ninguna de esas vainas locas.
+
+## Las mejores ISOs para principiantes
+
+### 1. Ubuntu
+
+**Ubuntu 25.10 llega mañana y ya conocemos sus novedades: ¿deberías actualizar?**
+
+Ubuntu es el tigre por excelencia, todos lo hemos usado. Es muy fácil de instalar, rápido, intuitivo, personalizable y una muy buena opción para una experiencia *Windows-like*.
+
+### 2. Linux Mint
+
+**New Features in Linux Mint 19.2 'Tina' - Linux Mint**
+
+Linux Mint con el entorno de escritorio KDE Plasma o también con Cinnamon recuerdan mucho mas a Windows, con una experiencia similar a lo que fue Windows 7 en su momento pero con *features* potentes, velocidad brutal y una arquitectura moderna. Una gran opción para la gente que quiere que solo funcione, sea rápido y eficaz.
+
+### 3. Deepin OS
+
+**Deepin Linux 23 Released, Here's What's New**
+
+Deepin OS es Windows sin ser Windows. Agarra todo lo bueno en UI de Windows y quítale todo lo feo de tener un SO codeado desde el año de la papa con las peores prácticas de desarrollo, eso es Deepin. Hace varios años que lo probé, mas de 6 o 7 probablemente y me encantó, ha evolucionado mucho desde entonces y es una gran opción para los que buscan la estética en el sistema operativo.
+
+### 4. ElementaryOS
+
+**Escritorio de elementary OS 8**
+
+Para quienes les gusta macOS pero quieren ser libres. Un SO claramente basado en macOS por su estética pero manteniendo los principios de una buena distro Linux.
+
+---
+
+Finalmente, Linux está ganando cada vez mas terreno en el *mainstream* en gran medida por las actualizaciones absurdas de Microsoft. Estamos viviendo un momento en el que las brechas digitales cada vez se acortan mas y la tecnología que antes era para frikis informáticos puede estar al alcance de todos. Dale una oportunidad a algo nuevo, quizá descubras un nuevo hobbie, el *distro jumping* jeje.
